@@ -101,6 +101,45 @@ html {
     .collection-item .collection-footer .price {
       width: 10%; }
 
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px; }
+  .header .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 25px; }
+  .header .options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; }
+    .header .options .option {
+      padding: 10px 15px; }
+
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px; }
+  .header .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 25px; }
+  .header .options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: flex-end; }
+    .header .options .option {
+      padding: 10px 15px; }
+
 .homepage {
   display: flex;
   flex-direction: column;
