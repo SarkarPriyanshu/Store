@@ -1,10 +1,14 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
-const Menuitem = ({ title, imageUrl, size }) => {
-  console.log(imageUrl);
+const Menuitem = ({ title, imageUrl, size, history, linkUrl, match }) => {
+  console.log(match.url);
   return (
     <>
-      <div className={`${size} menu-item`}>
+      <div
+        onClick={() => history.push(`${match.url}${linkUrl}`)}
+        className={`${size} menu-item`}
+      >
         <div
           className="background-image"
           style={{
@@ -20,4 +24,4 @@ const Menuitem = ({ title, imageUrl, size }) => {
   );
 };
 
-export default Menuitem;
+export default withRouter(Menuitem);
