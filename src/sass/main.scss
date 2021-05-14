@@ -1,7 +1,12 @@
 //Base
 @import "./base/base";
+
+//components
 @import "./components/menu-item.scss";
 @import "./components/directory.scss";
+@import "./components/previewCollection.scss";
+@import "./components/collectionItem.scss";
 
 //Pages
 @import "./pages/homepage";
+@import "./pages/shop";

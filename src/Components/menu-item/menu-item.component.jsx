@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 
 const Menuitem = ({ title, imageUrl, size, history, linkUrl, match }) => {
-  console.log(match.url);
   return (
     <>
       <div
