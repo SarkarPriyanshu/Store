@@ -187,6 +187,13 @@ html {
       background-color: #357ae8;
       border: none; }
 
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  width: 480px; }
+  .sign-up .title {
+    margin: 10px 0; }
+
 .homepage {
   display: flex;
   flex-direction: column;
