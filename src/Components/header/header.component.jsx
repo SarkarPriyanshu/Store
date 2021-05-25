@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import CartBag from "./cartbag";
 import CartDropdown from "../cart-dropdown/CartDropDown.component";
 import { ShowDropDown } from "../../Redux/Actions/Cart/cart.action";
+import { selectCurrentUser } from "../../Redux/Reducers/User/user.selector";
 
 const Header = (props) => {
   const { currentUser, Hide_DropDown_Value, Show_DropDown } = props;
@@ -47,7 +48,7 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.User_Reducer.currentUser,
+    currentUser: selectCurrentUser(state),
     Hide_DropDown_Value: state.cart.hidden,
   };
 };

@@ -3,14 +3,18 @@ import ReactDOM from "react-dom";
 import "./css/index.css";
 import App from "./App";
 import { Provider } from "react-redux";
-import store from "./Redux/Store/Store";
+import { store, persistor } from "./Redux/Store/Store";
+import { PersistGate } from "redux-persist/integration/react";
+// import
 
 require("dotenv").config();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

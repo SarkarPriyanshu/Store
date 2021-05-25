@@ -10,3 +10,10 @@ export const AddItem = (item) => {
     payload: item,
   };
 };
+
+export const RemoveItem = (item) => {
+  return {
+    type: "REMOVE_ITEM",
+    payload: item,
+  };
+};

@@ -13,6 +13,8 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utilities";
 import { connect } from "react-redux";
 import { SetCurrentUser } from "./Redux/Actions/User_Actions/userAction";
 import React from "react";
+import CartPage from "./Pages/Cart/cart.page";
+import { selectCurrentUser } from "./Redux/Reducers/User/user.selector";
 
 class App extends React.Component {
   unSubscribeFromAuth = null;
@@ -48,6 +50,7 @@ class App extends React.Component {
           <Route path="/" exact component={Homepage} />
           <Route path="/shop" exact component={Shop} />
           <Route path="/hats" exact component={Hats} />
+          <Route path="/cart" exact component={CartPage} />
           <Route
             path="/signin"
             exact
@@ -62,7 +65,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { currentUser: state.User_Reducer.currentUser };
+  return { currentUser: selectCurrentUser(state) };
 };
 
 const mapDispatchToProps = (dispatch) => ({
