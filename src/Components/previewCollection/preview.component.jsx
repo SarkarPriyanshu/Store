@@ -9,10 +9,10 @@ const PreviewCollection = ({ title, items }) => {
         <div className="preview">
           {items
             .filter((item, index) => index < 4)
-            .map(({ id, ...otherItemProps }) => {
+            .map((item) => {
               return (
                 <>
-                  <CollectionItem key={id} {...otherItemProps} />
+                  <CollectionItem key={item.id} item={item} />
                 </>
               );
             })}

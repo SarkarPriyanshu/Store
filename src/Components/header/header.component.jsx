@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import { auth } from "../../firebase/firebase.utilities";
 import { connect } from "react-redux";
+import CartBag from "./cartbag";
+import CartDropdown from "../cart-dropdown/CartDropDown.component";
+import { ShowDropDown } from "../../Redux/Actions/Cart/cart.action";
 
 const Header = (props) => {
-  const { currentUser } = props;
+  const { currentUser, Hide_DropDown_Value, Show_DropDown } = props;
 
   return (
     <div className="header">
@@ -33,13 +36,24 @@ const Header = (props) => {
             SIGN IN
           </Link>
         )}
+        <span onClick={() => Show_DropDown()}>
+          <CartBag />
+        </span>
       </div>
+      {Hide_DropDown_Value ? null : <CartDropdown />}
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  return { currentUser: state.User_Reducer.currentUser };
+  return {
+    currentUser: state.User_Reducer.currentUser,
+    Hide_DropDown_Value: state.cart.hidden,
+  };
 };
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = (dispatch) => ({
+  Show_DropDown: () => dispatch(ShowDropDown()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
